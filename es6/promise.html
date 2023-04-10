@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise</title>
+</head>
+<body>
+    <div id="box">image loading...</div>
+   <script>
+    var box = document.getElementById("box")
+    // promise:以同步的方式表达异步，避免回调地狱
+    // 亮点：函数的链式调用
+    function loadImageAsync(url){
+        const promise = new Promise(function(resolve,reject){
+            const image = new Image()
+            image.src = url
+            image.onload = ()=>{
+                resolve(image)
+            }
+            image.onerror = ()=>{
+                reject(new Error("could not load images at"+url))
+            }
+        })
+        return promise
+    } 
+    const promise = loadImageAsync("http://iwenwiki.com/pi/musicimg/2.png")
+    promise.then(function(data){
+        console.log("success",data)
+        box.innerText =  ""
+
+        box.appendChild(data)
+
+
+    },function(error){
+        box.innerHTML =  "image load failed"
+        console.log("failed",error)
+    })
+   </script>
+</body>
+</html>
