@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/es6/proxy/index.js"
+            "program": "${workspaceFolder}/es6/reflect/index.js"
         }
     ]
 }
