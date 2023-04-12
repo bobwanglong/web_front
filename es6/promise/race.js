@@ -1,14 +1,14 @@
 const p1 = new Promise((resolve,reject)=>{
-    setTimeout(resolve(1),100)
-    setTimeout(reject(11),110)
+    setTimeout(()=>resolve(1),100)
+    setTimeout(()=>reject(11),110)
 })
 const p2 = new Promise((resolve,reject)=>{
-    setTimeout(resolve(2),100)
-    setTimeout(reject(22),110)
+    setTimeout(()=>resolve(2),100)
+    setTimeout(()=>reject(22),110)
 })
 const p3 = new Promise((resolve,reject)=>{
-    setTimeout(resolve(3),100)
-    setTimeout(reject(33),110)
+    setTimeout(()=>resolve(3),100)
+    setTimeout(()=>reject(33),110)
 })
 
 const p = Promise.race([p1,p2,p3])
