@@ -1,2 +1,4 @@
 .DS_Store
 .vscode/launch.json
+vue-version2/node_modules
+vue-project/node_modules
