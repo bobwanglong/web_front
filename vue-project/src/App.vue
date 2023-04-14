@@ -1,25 +1,38 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-</script>
+
+
 
 <template>
   <header>
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+      <!-- <h2>{{ title }}</h2> -->
     </div>
-  </header>
 
-  <RouterView />
+    <demo-demo :title="title" />
+    <!-- <demo-demo v-for="post in posts" :key="post.id" :title="post.title" /> -->
+  </header>
 </template>
 
+<script >
+
+import DemoDemo from './components/demo.vue'
+
+export default {
+  components: {
+    DemoDemo
+  },
+
+  data() {
+    return {
+      title: "h"
+      // { id: 1, title: 'My journey with Vue' },
+
+
+    }
+  }
+}
+</script>
 <style scoped>
 header {
   line-height: 1.5;
