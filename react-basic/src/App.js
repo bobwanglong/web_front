@@ -5,6 +5,7 @@
 import Fa from "./components/childToFather"
 import Father from "./components/fathertochild"
 import F from "./components/broToBro"
+import Prov from "./components/context"
 // 组件学习
 
 
@@ -38,8 +39,10 @@ function App () {
       <div>兄弟组件之间传递
         <F />
       </div>
-    </div>
 
+      {/**使用context跨组件通信 */}
+      <Prov></Prov>
+    </div>
   )
 }
 
