@@ -7,7 +7,8 @@
 // import F from "./components/broToBro"
 // import Prov from "./components/context"
 // import FDemo from "./components/demo"
-import UseApp from "./components/hooks/useState"
+// import UseApp from "./components/hooks/useState"
+import EffectApp from "./components/hooks/useEffect"
 // 组件学习
 
 
@@ -54,8 +55,13 @@ function App () {
       {/**
        * hooks useState
        */}
+      {/* <div> */}
+      {/* <UseApp></UseApp> */}
+      {/* </div> */}
+
+      {/**hooks useEffect */}
       <div>
-        <UseApp></UseApp>
+        <EffectApp></EffectApp>
       </div>
     </div>
 
