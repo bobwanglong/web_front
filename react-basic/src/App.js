@@ -2,6 +2,7 @@
 // import HelloClass from './components/classComponents'
 // import { HelloFn, TestComponent, clickEventHandler } from './components/funcComponents'
 
+import Fa from "./components/childToFather"
 import Father from "./components/fathertochild"
 
 // 组件学习
@@ -27,6 +28,11 @@ function App () {
 
       {/*父传子*/}
       <Father />
+      <div>子传父
+        <div>
+          <Fa />
+        </div>
+      </div>
     </div>
   )
 }
