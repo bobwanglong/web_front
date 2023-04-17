@@ -2,10 +2,11 @@
 // import HelloClass from './components/classComponents'
 // import { HelloFn, TestComponent, clickEventHandler } from './components/funcComponents'
 
-import Fa from "./components/childToFather"
-import Father from "./components/fathertochild"
-import F from "./components/broToBro"
-import Prov from "./components/context"
+// import Fa from "./components/childToFather"
+// import Father from "./components/fathertochild"
+// import F from "./components/broToBro"
+// import Prov from "./components/context"
+import FDemo from "./components/demo"
 // 组件学习
 
 
@@ -28,21 +29,29 @@ function App () {
       </div> */}
 
       {/*父传子*/}
-      <Father />
-      <div>子传父
-        <div>
-          <Fa />
-        </div>
-      </div>
+      {/* <Father /> */}
+      {/* <div>子传父 */}
+      {/* <div> */}
+      {/* <Fa /> */}
+      {/* </div> */}
+      {/* </div> */}
 
       {/*兄弟之间传递*/}
-      <div>兄弟组件之间传递
-        <F />
-      </div>
+      {/* <div>兄弟组件之间传递 */}
+      {/* <F /> */}
+      {/* </div> */}
 
       {/**使用context跨组件通信 */}
-      <Prov></Prov>
+      {/* <Prov></Prov> */}
+
+      {/*
+       * 练习demo
+       */}
+      <div>
+        <FDemo></FDemo>
+      </div>
     </div>
+
   )
 }
 
