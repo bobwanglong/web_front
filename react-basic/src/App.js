@@ -8,7 +8,7 @@
 // import Prov from "./components/context"
 // import FDemo from "./components/demo"
 // import UseApp from "./components/hooks/useState"
-import EffectApp from "./components/hooks/useEffect"
+import { EffectAppMore, EffectAppPro } from "./components/hooks/useEffectDemo"
 // 组件学习
 
 
@@ -60,8 +60,16 @@ function App () {
       {/* </div> */}
 
       {/**hooks useEffect */}
-      <div>
+      {/* <div>
         <EffectApp></EffectApp>
+      </div> */}
+      <div>
+        <EffectAppMore></EffectAppMore>
+      </div>
+
+      <div>
+        清除副作用
+        <EffectAppPro></EffectAppPro>
       </div>
     </div>
 
