@@ -1,6 +1,8 @@
 // 引入类组件
-import HelloClass from './components/classComponents'
-import { HelloFn, TestComponent, clickEventHandler } from './components/funcComponents'
+// import HelloClass from './components/classComponents'
+// import { HelloFn, TestComponent, clickEventHandler } from './components/funcComponents'
+
+import Father from "./components/fathertochild"
 
 // 组件学习
 
@@ -10,18 +12,21 @@ function App () {
     <div className="App">
       {/*render HelloFn */}
       {/* // <HelloFn></HelloFn> */}
-      <HelloClass />
-      <HelloFn />
+      {/* <HelloClass />
+      <HelloFn /> */}
 
-      <div>
-        {/* 函数组件的事件绑定
+      {/* <div> */}
+      {/* 函数组件的事件绑定
 // 语法：on+事件名称={事件处理程序}*/}
-        <button onClick={clickEventHandler}>click me out</button>
-      </div>
+      {/* <button onClick={clickEventHandler}>click me out</button>
+      </div> */}
 
-      <div>
+      {/* <div>
         <TestComponent />
-      </div>
+      </div> */}
+
+      {/*父传子*/}
+      <Father />
     </div>
   )
 }
