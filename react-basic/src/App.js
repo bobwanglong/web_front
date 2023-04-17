@@ -6,7 +6,8 @@
 // import Father from "./components/fathertochild"
 // import F from "./components/broToBro"
 // import Prov from "./components/context"
-import FDemo from "./components/demo"
+// import FDemo from "./components/demo"
+import UseApp from "./components/hooks/useState"
 // 组件学习
 
 
@@ -47,8 +48,14 @@ function App () {
       {/*
        * 练习demo
        */}
+      {/* <div> */}
+      {/* <FDemo></FDemo> */}
+      {/* </div> */}
+      {/**
+       * hooks useState
+       */}
       <div>
-        <FDemo></FDemo>
+        <UseApp></UseApp>
       </div>
     </div>
 
