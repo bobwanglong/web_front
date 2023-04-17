@@ -16,7 +16,7 @@ function Son (props) {
   }
   return (
     <div>
-      {props.msg}
+      这是子组件展示的{props.msg}
       <button onClick={handlerClick}>change</button>
     </div>
   )
@@ -37,6 +37,7 @@ class Fa extends React.Component {
     return (
       <div>
         <div>父组件</div>
+        <div>这是父组件展示的{this.state.message}</div>
         <Son
           msg={this.state.message}
           // 传递给子组件

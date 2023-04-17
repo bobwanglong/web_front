@@ -4,7 +4,7 @@
 
 import Fa from "./components/childToFather"
 import Father from "./components/fathertochild"
-
+import F from "./components/broToBro"
 // 组件学习
 
 
@@ -33,7 +33,13 @@ function App () {
           <Fa />
         </div>
       </div>
+
+      {/*兄弟之间传递*/}
+      <div>兄弟组件之间传递
+        <F />
+      </div>
     </div>
+
   )
 }
 
