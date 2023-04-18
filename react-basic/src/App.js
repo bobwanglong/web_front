@@ -8,7 +8,8 @@
 // import Prov from "./components/context"
 // import FDemo from "./components/demo"
 // import UseApp from "./components/hooks/useState"
-import { EffectAppMore, EffectAppPro } from "./components/hooks/useEffectDemo"
+// import { EffectAppMore, EffectAppPro } from "./components/hooks/useEffectDemo"
+import CusApp from "./components/hooks/hooksDemo1"
 // 组件学习
 
 
@@ -63,13 +64,20 @@ function App () {
       {/* <div>
         <EffectApp></EffectApp>
       </div> */}
-      <div>
-        <EffectAppMore></EffectAppMore>
-      </div>
+      {/* <div> */}
+      {/* <EffectAppMore></EffectAppMore> */}
+      {/* </div> */}
 
+      {/* <div> */}
+      {/* 清除副作用 */}
+      {/* <EffectAppPro></EffectAppPro> */}
+      {/* </div> */}
+
+      {/**
+       * 获取滚动距离
+       */}
       <div>
-        清除副作用
-        <EffectAppPro></EffectAppPro>
+        <CusApp></CusApp>
       </div>
     </div>
 
