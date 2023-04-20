@@ -13,17 +13,28 @@ import channelStore from './components/asyncawait'
 
 // 模块化，使用store中的组件｜方法
 import { useStore } from './components/store'
-
+import Bar from './components/bar'
+import Foo from './components/foo'
 function App() {
-  const [count, setCount] = useState(0)
-  useEffect(() => {
-    channelStore.setChannelList()
-  })
+  // const [count, setCount] = useState(0)
+  // useEffect(() => {
+  //   channelStore.setChannelList()
+  // })
 
   // mobx模块化结合context
-  const store = useStore()
+  // const store = useStore()
+
+  // 多组件共享数据
+  const { taskStore } = useStore()
   return (
     <div className="App">
+      <span>这是bar组件的内容</span>
+      <Bar />
+      <button onClick={() => taskStore.addTask('react')}>修改taskStore</button>
+      <div>
+        <span>这是foo组件的内容</span>
+        <Foo />
+      </div>
       {/* <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -37,7 +48,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p> */}
-      <div className="card">
+      {/* <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
@@ -49,34 +60,32 @@ function App() {
         <button onClick={() => counter.addCount()}>
           点击计数：{counter.count}
         </button>
-      </div>
-
-      <div>
+      </div> */}
+      {/* <div>
         <span>mobx计算属性</span>
         {/**原数组 */}
-        {JSON.stringify(counterCom.list)}
+      {/* {JSON.stringify(counterCom.list)}
         {/**计算属性 */}
-        {JSON.stringify(counterCom.filterList)}
-        <button onClick={() => counterCom.changeList()}>change list</button>
-      </div>
-
-      <div>
+      {/* {JSON.stringify(counterCom.filterList)} */}
+      {/* <button onClick={() => counterCom.changeList()}>change list</button> */}
+      {/* </div> } */}
+      {/* <div>
         <span>异步执行</span>
         <ul>
           {channelStore.channelList.map((item) => (
             <li key={item.id}>{item.name}</li>
           ))}
         </ul>
-      </div>
-
-      <div>
+      </div> */}
+      {/* <div>
         <span>mobx的组件化方案</span>
         <button onClick={() => store.counterStore.addCount()}>
           {store.counterStore.count}
         </button>
-      </div>
+      </div> */}
     </div>
   )
 }
 
-export default observer(App)
+// export default observer(App)
+export default App

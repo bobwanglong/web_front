@@ -4,8 +4,8 @@ class TaskStore {
   constructor() {
     makeAutoObservable(this)
   }
-  addTask () {
-    this.taskList.push('vue', 'react')
+  addTask (params) {
+    this.taskList.push(params)
   }
 }
 

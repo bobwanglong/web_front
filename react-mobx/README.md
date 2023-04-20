@@ -51,3 +51,13 @@ counterStore.js
 实现步骤： 1.拆分模块 js 文件，每个模块中定义自己独立的 state/action 2.在 store/index.js 中导入拆分之后的模块，进行模块组合 3.利用 react 的 context 的机制导出统一的 useStore 方法，给业务组件使用
 代码文件：
 components/store/\*.js
+
+### 多组件共享数据
+
+#### 目标：
+
+当数据发生变化，所有用到数据的组件都会得到同步的组件的更新
+
+#### 实现步骤：
+
+在 foo 组件和 bar 组件中分别使用 store 中的数据，然后在 app 组件中进行数据修改，查看 foo 组件和 bar 组件是否得到更新
