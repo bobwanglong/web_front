@@ -1,0 +1,63 @@
+autoCert: false
+caCertBase64: ''
+cacheSize: 0
+certBase64: ''
+certs: {}
+http3: false
+https: false
+keepAlive: true
+keepAliveTimeout: 75s
+keyBase64: ''
+keys: {}
+kind: HTTPServer
+maxConnections: 10240
+name: apigateway
+port: 58080
+rules:
+  - host: ''
+    hostRegexp: ''
+    paths:
+      - backend: dace-1638737414576943104-1638737504750284800
+        headers: []
+        path: /openapi/v2/groupDance/tasks
+        rewriteTarget: ''
+      - backend: startPerforming-1638737414576943104-1638737504750284800
+        headers: []
+        path: /openapi/v2/groupDance/tasks/startPerforming
+        rewriteTarget: ''
+  - host: ''
+    hostRegexp: ''
+    paths:
+      - backend: taskInfo-1638737414576943104-1638737504750284800
+        headers: []
+        pathRegexp: /openapi/v2/groupDance/tasks/(.*)/robots
+        rewriteTarget: ''
+      - backend: taskInfotest-1638737414576943104-1638737504750284800
+        headers: []
+        pathRegexp: /openapi/v2/groupDance/tasks/(.*)/robots/test
+        rewriteTarget: ''
+  - host: ''
+    hostRegexp: ''
+    paths:
+      - backend: videoListUsingGET-1635932159149617152-1635932856184221696
+        headers: []
+        pathPrefix: /ptbmqyaq/v1/scene-service/security/visual/video/live/list/
+        rewriteTarget: ''
+      - backend: listUsingPOST-1635932159149617152-1635934153914462208
+        headers: []
+        pathPrefix: /ptbmqyaq/v1/cube-people-adapter/pass-log/list/
+        rewriteTarget: ''
+      - backend: getget-1627862142453559296-1627904932625526784
+        headers: []
+        pathPrefix: /AI02/v1/get/
+        rewriteTarget: ''
+tracing:
+  serviceName: ''
+  tags: {}
+  zipkin:
+    hostport: ''
+    id128Bit: false
+    sameSpan: false
+    sampleRate: 0
+    serverURL: ''
+xForwardedFor: false
