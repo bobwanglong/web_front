@@ -1,5 +1,12 @@
 import { observer } from 'mobx-react-lite'
-import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom'
+import {
+  Outlet,
+  Link,
+  useLocation,
+  useNavigate,
+  Routes,
+  Route,
+} from 'react-router-dom'
 import {
   UploadOutlined,
   UserOutlined,
@@ -11,19 +18,28 @@ import { Layout, Menu, theme } from 'antd'
 import React from 'react'
 
 import './index.scss'
+import Apigateway from '../apigateway'
 
 const { Header, Content, Footer, Sider } = Layout
-
+const Plat = () => (
+  <div>
+    <h1>plat</h1>
+  </div>
+)
 const MyLayout = () => {
-  // const [openKeys, setOpenKeys] = useState([])
-  // const [selectedKey, setSelectedKey] = useState([])
   const {
     token: { colorBgContainer },
   } = theme.useToken()
 
-  const ApiListHandler = ({ key, domEvent }) => {
-    console.log('触发', domEvent)
-    console.log('key', key)
+  const navigate = useNavigate() // 跳转函数
+
+  const ApiListHandler = ({ item, key, keyPath, domEvent }) => {
+    // console.log('触发的事件', domEvent)
+    console.log('key:', key)
+    // console.log('keyPath:', keyPath)
+    // console.log('item', item)
+    // navigate('/' + key, { replace: true })
+    navigate(key, { replace: true })
   }
   return (
     <Layout>
@@ -31,10 +47,10 @@ const MyLayout = () => {
         breakpoint="lg"
         collapsedWidth="0"
         onBreakpoint={(broken) => {
-          console.log(broken)
+          console.log('b', broken)
         }}
         onCollapse={(collapsed, type) => {
-          console.log(collapsed, type)
+          console.log('c:', collapsed, 'ct', type)
         }}>
         <div className="sideInner">
           <div className="logo" />
@@ -42,31 +58,19 @@ const MyLayout = () => {
             theme="dark"
             mode="inline"
             defaultSelectedKeys={['4']}
-            // items={[
-            //   UserOutlined,
-            //   VideoCameraOutlined,
-            //   UploadOutlined,
-            //   AreaChartOutlined,
-            //   myIcon,
-            // ].map((icon, index) => ({
-            //   key: String(index + 1),
-            //   icon: React.createElement(icon),
-            //   label: `nav ${index + 1}`,
-            // }))}
             onClick={ApiListHandler}
             items={[
               {
-                icon: React.createElement(VideoCameraOutlined),
-                label: '接口列表',
-                key: '1',
+                icon: React.createElement(AreaChartOutlined),
+                label: '平台信息列表',
+                key: 'plat',
               },
               {
-                icon: React.createElement(UserOutlined),
-                label: '456',
-                key: '2',
+                icon: React.createElement(UploadOutlined),
+                label: '网关API信息',
+                key: 'gateway',
               },
-            ]}
-          />
+            ]}></Menu>
         </div>
       </Sider>
       <Layout>
@@ -86,7 +90,11 @@ const MyLayout = () => {
               minHeight: 'calc(100vh - 100px - 80px)',
               background: colorBgContainer,
             }}>
-            content
+            {/**二级路由出口 */}
+            <Routes>
+              <Route path="/plat" element={<Plat />} />
+              <Route path="/gateway" element={<Apigateway />} />
+            </Routes>
           </div>
         </Content>
         <Footer
