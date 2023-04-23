@@ -19,6 +19,7 @@ import React from 'react'
 
 import './index.scss'
 import Apigateway from '../apigateway'
+import PlatForm from '../platform'
 
 const { Header, Content, Footer, Sider } = Layout
 const Plat = () => (
@@ -78,8 +79,9 @@ const MyLayout = () => {
           style={{
             padding: 0,
             background: colorBgContainer,
-          }}
-        />
+          }}>
+          <PlatForm name={'cube'} age={12}></PlatForm>
+        </Header>
         <Content
           style={{
             margin: '24px 16px 0',
