@@ -1,10 +1,8 @@
-// eslint-disable-next-line no-unused-vars
 import React, { Suspense } from 'react'
 import styled from 'styled-components'
 import Navbar from './Navbar'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Sphere, MeshDistortMaterial } from '@react-three/drei'
-
 const Section = styled.div`
   height: 100vh;
   scroll-snap-align: center;
@@ -17,6 +15,7 @@ const Section = styled.div`
     height: 200vh;
   }
 `
+
 const Container = styled.div`
   height: 100%;
   scroll-snap-align: center;
@@ -32,15 +31,6 @@ const Container = styled.div`
   }
 `
 
-const Right = styled.div`
-  flex: 3;
-  position: relative;
-  @media only screen and (max-width: 768px) {
-    flex: 1;
-    width: 100%;
-  }
-`
-
 const Left = styled.div`
   flex: 2;
   display: flex;
@@ -53,6 +43,7 @@ const Left = styled.div`
     align-items: center;
   }
 `
+
 const Title = styled.h1`
   font-size: 74px;
 
@@ -60,6 +51,7 @@ const Title = styled.h1`
     text-align: center;
   }
 `
+
 const WhatWeDo = styled.div`
   display: flex;
   align-items: center;
@@ -69,9 +61,11 @@ const WhatWeDo = styled.div`
 const Line = styled.img`
   height: 5px;
 `
+
 const Subtitle = styled.h2`
   color: #da4ea2;
 `
+
 const Desc = styled.p`
   font-size: 24px;
   color: lightgray;
@@ -80,6 +74,7 @@ const Desc = styled.p`
     text-align: center;
   }
 `
+
 const Button = styled.button`
   background-color: #da4ea2;
   color: white;
@@ -90,6 +85,16 @@ const Button = styled.button`
   border-radius: 5px;
   cursor: pointer;
 `
+
+const Right = styled.div`
+  flex: 3;
+  position: relative;
+  @media only screen and (max-width: 768px) {
+    flex: 1;
+    width: 100%;
+  }
+`
+
 const Img = styled.img`
   width: 800px;
   height: 600px;
@@ -113,7 +118,8 @@ const Img = styled.img`
     }
   }
 `
-function Hero() {
+
+const Hero = () => {
   return (
     <Section>
       <Navbar />
@@ -121,7 +127,7 @@ function Hero() {
         <Left>
           <Title>Think. Make. Solve.</Title>
           <WhatWeDo>
-            <Line />
+            <Line src="./img/line.png" />
             <Subtitle>What we Do</Subtitle>
           </WhatWeDo>
           <Desc>
@@ -132,18 +138,17 @@ function Hero() {
         <Right>
           <Canvas>
             <Suspense fallback={null}>
-              <OrbitControls enableZoom={false}>
-                <ambientLight intensity={1} />
-                <directionalLight position={[3, 2, 1]} />
-                <Sphere args={[1, 100, 200]} scale={2.4}>
-                  <MeshDistortMaterial
-                    color="#3d1c56"
-                    attach="material"
-                    distort={0.5}
-                    speed={2}
-                  />
-                </Sphere>
-              </OrbitControls>
+              <OrbitControls enableZoom={false} />
+              <ambientLight intensity={1} />
+              <directionalLight position={[3, 2, 1]} />
+              <Sphere args={[1, 100, 200]} scale={2.4}>
+                <MeshDistortMaterial
+                  color="#3d1c56"
+                  attach="material"
+                  distort={0.5}
+                  speed={2}
+                />
+              </Sphere>
             </Suspense>
           </Canvas>
           <Img src="./img/moon.png" />
