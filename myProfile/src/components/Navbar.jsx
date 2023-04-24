@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
 import styled from 'styled-components'
+import SearchIcon from './search'
 const Section = styled.div`
   display: flex;
   justify-content: center;
@@ -47,10 +48,7 @@ const Icons = styled.div`
   align-items: center;
   gap: 20px;
 `
-const Icon = styled.img`
-  width: 20px;
-  cursor: pointer;
-`
+
 const Button = styled.button`
   width: 100px;
   padding: 10px;
@@ -60,6 +58,7 @@ const Button = styled.button`
   border-radius: 5px;
   cursor: pointer;
 `
+
 const Navbar = () => {
   return (
     <Section>
@@ -74,7 +73,7 @@ const Navbar = () => {
           </List>
         </Links>
         <Icons>
-          <Icon src="./img/search.png" />
+          <SearchIcon srcPath="./img/search.png" />
           <Button>Now</Button>
         </Icons>
       </Container>
