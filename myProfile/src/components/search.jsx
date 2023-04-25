@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { Input } from 'antd'
-import './index.css'
+import './search.css'
 const SearchIcon = ({ srcPath }) => {
   const entry = (e) => {
     let keyCode = e.keyCode
@@ -12,12 +12,14 @@ const SearchIcon = ({ srcPath }) => {
     }
   }
   let v = ''
-  let display = false
+  // let display = false
+
+  const [display, setDisplay] = useState(false)
+
   const searchClick = () => {
     // let v = document.getElementById('searchInput').value
-    console.log(display)
-    display = !display
-    console.log(v)
+    setDisplay(!display)
+    // display = !display
   }
   const onChange = (e) => {
     v = e.target.value
@@ -25,11 +27,12 @@ const SearchIcon = ({ srcPath }) => {
 
   return (
     <>
-      <div className={display ? 'as' : ''}>
+      <div className={display ? '' : 'as'}>
         <Input
           id="searchInput"
           placeholder="search everything"
           onChange={onChange}
+          onKeyUp={entry}
         />
       </div>
 
