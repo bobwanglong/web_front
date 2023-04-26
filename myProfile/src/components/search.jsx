@@ -25,16 +25,32 @@ const SearchIcon = ({ srcPath }) => {
     v = e.target.value
   }
 
+  // return (
+  //   <>
+  //     <div className={display ? '' : 'as'}>
+  //       <Input
+  //         id="searchInput"
+  //         placeholder="search everything"
+  //         onChange={onChange}
+  //         onKeyUp={entry}
+  //       />
+  //     </div>
+
+  //     <Icon src={srcPath} onClick={searchClick} />
+  //   </>
+  // )
   return (
     <>
-      <div className={display ? '' : 'as'}>
+      {display ? (
         <Input
           id="searchInput"
           placeholder="search everything"
           onChange={onChange}
           onKeyUp={entry}
         />
-      </div>
+      ) : (
+        ''
+      )}
 
       <Icon src={srcPath} onClick={searchClick} />
     </>
