@@ -33,6 +33,7 @@ fonts.google.com
 ```
 
 相对路径的修改为@
+存在的问题：开发环境中不能跳转
 
 ```js
 //在vite.config.js文件中修改
@@ -47,4 +48,13 @@ export default defineConfig({
     alias: [{ find: '@', replacement: path.relative(__dirname, 'src') }], //add
   },
 })
+```
+
+三：项目 MUI 和主题配置
+安装 vs code 插件
+Tailwind Shades
+相关代码：
+
+```js
+// theme.js
 ```
