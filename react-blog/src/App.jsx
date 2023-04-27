@@ -1,11 +1,12 @@
-import { useState } from 'react'
-
 import './App.css'
+import Accordion from './components/panel/'
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return <div className="App"></div>
+  return (
+    <>
+      <Accordion></Accordion>
+    </>
+  )
 }
 
 export default App
