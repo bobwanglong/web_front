@@ -43,6 +43,8 @@ src/assets 文件夹下上传所有的静态文件
 
 #### 3.tailwind 样式引入
 
+https://gist.github.com/adrianhajdin/b1d33c262941a7e21aad833a1cfc84b1
+
 src/index.css
 src/styles.js
 src/tailwind.config.js
@@ -52,6 +54,7 @@ src/utils/motion.js
 src/constants/index.js
 
 #### 4. 布局 layout
+
 4.1 路由引入
 
-在 app.jsx 中引入 
+在 app.jsx 中引入
