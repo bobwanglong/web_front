@@ -38,3 +38,12 @@ pnpm install  react-router-dom @emailjs/browser @react-three/drei @react-three/f
 
 2。静态文件模块
 src/assets 文件夹下上传所有的静态文件
+
+3.tailwind 样式引入
+src/index.css
+src/styles.js
+src/tailwind.config.js
+动画设置
+src/utils/motion.js
+样式的常量式封装
+src/constants/index.js
