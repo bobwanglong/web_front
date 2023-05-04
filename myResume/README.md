@@ -36,5 +36,5 @@ pnpm install  react-router-dom @emailjs/browser @react-three/drei @react-three/f
 1.三维模块
 将 pc 建模材料 desktop 和行星建模文件 planet 文件夹 移入 public 文件夹
 
-2。组件模块
-创建组件文件夹
+2。静态文件模块
+src/assets 文件夹下上传所有的静态文件
