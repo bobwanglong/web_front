@@ -203,3 +203,5 @@ export default CanvasLoader
 ```
 
 ![](/Users/wanglong/Library/Application%20Support/marktext/images/2023-05-05-16-34-48-image.png)
+
+4.4 about 组件
