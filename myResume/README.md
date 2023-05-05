@@ -62,4 +62,6 @@ vite 配置 tailwindcss https://tailwindcss.com/docs/guides/vite
 
 在 app.jsx 中引入
 
-遇到的问题：tailwind 样式未生效
+遇到的问题：tailwind 样式未生效,导致原因：main.jsx 中未引入 index.css
+
+4.2 navBar
