@@ -127,3 +127,13 @@ return (
   </nav>
 )
 ```
+
+4.3 hero 模块
+4.3.1 引导线实现
+
+```jsx
+ <div className=" w-5 h-5 rounded-full bg-[#915EFF]" />
+ <div className="w-1 sm:h-80 h-40 violet-gradient" />
+```
+
+![](/Users/wanglong/Library/Application%20Support/marktext/images/2023-05-05-15-00-30-image.png)
