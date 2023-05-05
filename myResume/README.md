@@ -22,7 +22,8 @@ src
 css 框架 tailwindcss
 
 ```bash
-pnpm install -D tailwindcss
+pnpm install --strict-peer-dependencies -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p # 在项目根目录下会多出一个文件 postcss.config.js
 ```
 
 路由 react-router-dom 需要 6 以上版本
@@ -53,8 +54,12 @@ src/utils/motion.js
 样式的常量式封装
 src/constants/index.js
 
+vite 配置 tailwindcss https://tailwindcss.com/docs/guides/vite
+
 #### 4. 布局 layout
 
 4.1 路由引入
 
 在 app.jsx 中引入
+
+遇到的问题：tailwind 样式未生效
