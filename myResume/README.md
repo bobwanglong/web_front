@@ -157,3 +157,49 @@ return (
   </a>
 </div>
 ```
+
+4.3.3 computer 3D 模型 1.控制可旋转视角
+
+```jsx
+<OrbitControls
+  enableZoom={false}
+  maxPolarAngle={Math.PI / 2}
+  minPolarAngle={Math.PI / 2}
+/>
+```
+
+2.显示模型加载进度
+
+```jsx
+import { Html, useProgress } from '@react-three/drei'
+
+const CanvasLoader = () => {
+  const { progress } = useProgress()
+  return (
+    <Html
+      as="div"
+      center
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column',
+      }}>
+      <span className="canvas-loader"></span>
+      <p
+        style={{
+          fontSize: 14,
+          color: '#F1F1F1',
+          fontWeight: 800,
+          marginTop: 40,
+        }}>
+        {progress.toFixed(2)}%
+      </p>
+    </Html>
+  )
+}
+
+export default CanvasLoader
+```
+
+![](/Users/wanglong/Library/Application%20Support/marktext/images/2023-05-05-16-34-48-image.png)
