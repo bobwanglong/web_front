@@ -65,7 +65,7 @@ vite 配置 tailwindcss https://tailwindcss.com/docs/guides/vite
 遇到的问题：tailwind 样式未生效,导致原因：main.jsx 中未引入 index.css
 
 4.2 navBar
-自适应菜单功能
+4.2.1 自适应菜单功能
 
 ```jsx
 <div className="sm:hidden flex flex-1 justify-end items-center">
@@ -97,4 +97,33 @@ vite 配置 tailwindcss https://tailwindcss.com/docs/guides/vite
     </ul>
   </div>
 </div>
+```
+
+4.2.2 屏幕滚动
+
+```jsx
+const [scrolled, setScrolled] = useState(false)
+
+useEffect(() => {
+  const handleScroll = () => {
+    const scrollTop = window.scrollY
+    if (scrollTop > 100) {
+      setScrolled(true)
+    } else {
+      setScrolled(false)
+    }
+  }
+  window.addEventListener('scroll', handleScroll)
+  return () => window.removeEventListener('scroll', handleScroll)
+}, [])
+return (
+  <nav
+    className={`${
+      styles.paddingX
+    } w-full flex items-center py-5 fixed top-0 z-20 ${
+      scrolled ? 'bg-primary' : 'bg-transparent'
+    }`}>
+    ...
+  </nav>
+)
 ```
