@@ -65,3 +65,36 @@ vite 配置 tailwindcss https://tailwindcss.com/docs/guides/vite
 遇到的问题：tailwind 样式未生效,导致原因：main.jsx 中未引入 index.css
 
 4.2 navBar
+自适应菜单功能
+
+```jsx
+<div className="sm:hidden flex flex-1 justify-end items-center">
+  <img
+    src={toggle ? close : menu}
+    alt="menu"
+    className="w-[28px] h-[28px] object-contain"
+    onClick={() => setToggle(!toggle)}
+  />
+
+  <div
+    className={`${
+      !toggle ? 'hidden' : 'flex'
+    } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}>
+    <ul className="list-none flex justify-end items-start flex-1 flex-col gap-4">
+      {navLinks.map((nav) => (
+        <li
+          key={nav.id}
+          className={`font-poppins font-medium cursor-pointer text-[16px] ${
+            active === nav.title ? 'text-white' : 'text-secondary'
+          }`}
+          onClick={() => {
+            setToggle(!toggle)
+            setActive(nav.title)
+          }}>
+          <a href={`#${nav.id}`}>{nav.title}</a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</div>
+```
