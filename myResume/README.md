@@ -205,3 +205,31 @@ export default CanvasLoader
 ![](/Users/wanglong/Library/Application%20Support/marktext/images/2023-05-05-16-34-48-image.png)
 
 4.4 about 组件
+卡片动画
+
+```jsx
+const ServiceCard = ({ index, title, icon }) => (
+  <Tilt className="xs:w-[250px] w-full">
+    <motion.div
+      variants={fadeIn('right', 'spring', index * 0.5, 0.75)}
+      className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card">
+      <div
+        options={{
+          max: 45,
+          scale: 1,
+          speed: 450,
+        }}
+        className=" bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col">
+        <img
+          src={icon}
+          alt="web-development"
+          className=" w-16 h-16 object-contain "
+        />
+        <h3 className=" text-white text-[20px] font-bold text-center">
+          {title}
+        </h3>
+      </div>
+    </motion.div>
+  </Tilt>
+)
+```
