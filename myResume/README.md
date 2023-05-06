@@ -308,3 +308,43 @@ export default BallCanvas
 
 4.7 project
 参考 About 组件
+
+4.8 contact 组件
+利用 emailjs 发送邮件，不依赖后端，配置 emailjs 的文章https://juejin.cn/post/6956399205527060516
+代码实现：
+
+```jsx
+emailjs
+  .send(
+    import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+    import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+    {
+      from_name: form.name,
+      to_name: 'bob-wang',
+      from_email: form.email,
+      to_email: 'wanglongtin@163.com',
+      message: form.message,
+    },
+    import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+  )
+  .then(
+    () => {
+      setLoading(false)
+      alert('Thank you. I will get back to you as soon as possible.')
+
+      setForm({
+        name: '',
+        email: '',
+        message: '',
+      })
+    },
+    (error) => {
+      setLoading(false)
+      console.error(error)
+
+      alert('Ahh, something went wrong. Please try again.')
+    }
+  )
+```
+
+配置信息在环境变量文件 .env 中
