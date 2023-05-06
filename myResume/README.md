@@ -305,3 +305,6 @@ const BallCanvas = ({ icon }) => {
 
 export default BallCanvas
 ```
+
+4.7 project
+参考 About 组件
