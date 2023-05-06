@@ -233,3 +233,13 @@ const ServiceCard = ({ index, title, icon }) => (
   </Tilt>
 )
 ```
+
+4.5 work experience
+竖线时间线功能
+
+```jsx
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from 'react-vertical-timeline-component'
+```
