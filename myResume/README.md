@@ -348,3 +348,7 @@ emailjs
 ```
 
 配置信息在环境变量文件 .env 中
+
+github page 发布参考
+配置 secretkey 参考和脚本参考：https://juejin.cn/post/7077143588093558815
+ci.ymlaction 脚本参考： https://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html

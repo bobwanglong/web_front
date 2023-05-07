@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import Tilt from 'react-tilt'
 import { motion } from 'framer-motion'
 
@@ -7,12 +7,14 @@ import { services } from '../constants'
 import { textVariant, fadeIn } from '../utils/motion'
 import { SectionWrapper } from '../hoc'
 
+// eslint-disable-next-line react/prop-types
 const ServiceCard = ({ index, title, icon }) => (
   <Tilt className="xs:w-[250px] w-full">
     <motion.div
       variants={fadeIn('right', 'spring', index * 0.5, 0.75)}
       className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card">
       <div
+        // eslint-disable-next-line react/no-unknown-property
         options={{
           max: 45,
           scale: 1,
