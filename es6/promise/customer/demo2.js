@@ -105,17 +105,42 @@ class MyPromiseDemo2 {
 // }, (err) => {
 //   console.log(err)
 // })
+// const p1 = new MyPromiseDemo2((resolved, rejected) => {
+//   resolved('resolved')
+// })
+
+// p1.then((res) => {
+//   console.log(res)
+//   return 'then1'
+// })
+//   .then((res) => {
+//     console.log(res)
+//     return 'then2'
+//   })
+//   .then((res) => {
+//     console.log(res)
+//     return 'then3'
+//   })
+
 const p1 = new MyPromiseDemo2((resolved, rejected) => {
-  resolved('resolved')
+  resolved('我 resolved 了')
 })
 
 p1.then((res) => {
   console.log(res)
-  return 'then1'
+  return new MyPromise((resolved, rejected) => {
+    setTimeout(() => {
+      resolved('then1')
+    }, 1000)
+  })
 })
   .then((res) => {
     console.log(res)
-    return 'then2'
+    return new MyPromise((resolved, rejected) => {
+      setTimeout(() => {
+        resolved('then2')
+      }, 1000)
+    })
   })
   .then((res) => {
     console.log(res)
