@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import { Demo1, Counter } from './hooks/customhook'
+import { Demo1, Counter, PointerFive } from './hooks/customhook'
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
         <div>
           <Counter />
         </div>
+        <PointerFive />
       </main>
     </>
   )
