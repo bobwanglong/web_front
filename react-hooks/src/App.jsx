@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 import { Demo1, Counter, PointerFive } from './hooks/customhook'
+import RefCounter from './hooks/ref'
+import Watch from './hooks/ref/Watch'
 
 function App() {
   return (
@@ -15,7 +17,9 @@ function App() {
         <div>
           <Counter />
         </div>
-        <PointerFive />
+        {/* <PointerFive /> */}
+        <RefCounter />
+        <Watch />
       </main>
     </>
   )
