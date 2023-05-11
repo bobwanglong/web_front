@@ -8,7 +8,7 @@ export default function Stopwatch() {
   function handleStart() {
     setStartTime(Date.now())
     setNow(Date.now())
-
+    // 每次点击开始时要保证 interval清零
     clearInterval(intervalRef.current)
     intervalRef.current = setInterval(() => {
       setNow(Date.now())
