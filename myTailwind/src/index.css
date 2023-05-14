@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  background: theme('colors.slate.950');
+  color: theme('colors.slate.50');
+}
+/* 
+main {
+  background: conic-gradient(white, black, white);
+  width: 100vw;
+  height: 100vh;
+} */
+/*
+css 变量表示
+*/
+@property --shimmer-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+/*
+https://developer.mozilla.org/zh-CN/docs/Web/CSS/@keyframes
+关键帧：keyframes:控制css动画序列中的中间步骤
+css变量表示：“--”
+*/
+@keyframes shimmer {
+  0% {
+    --shimmer-angle: 0deg;
+  }
+
+  100% {
+    --shimmer-angle: 360deg;
+  }
+}
