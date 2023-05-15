@@ -51,6 +51,17 @@ function App() {
         aria-label="生成 AI 内容">
         <span className="opacity-0">生成 AI 内容</span>
       </button> */}
+
+      <div
+        className=" p-[1px]  rounded-2xl
+         bg-[conic-gradient(from_var(--shimmer-angle),theme(colors.green.950)_0%,theme(colors.pink.200)_10%,theme(colors.green.200)_10%,theme(colors.pink.100))]
+         hover:animate-[shimmer_2.5s_linear_infinite]
+        ">
+        <input
+          className=" bg-slate-950 px-24 py-8  rounded-[calc(1rem_-_1px)] focus:outline-none "
+          placeholder="what's your good name?"
+        />
+      </div>
     </main>
   )
 }
